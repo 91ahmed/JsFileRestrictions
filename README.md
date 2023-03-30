@@ -1,4 +1,4 @@
-## jsFileRestrictions
+## JsFileRestrictions
 Simple javascript class to perform client-side restrictions on the files.
 
 ### Example
@@ -28,7 +28,6 @@ if (file.success()) {
 ```
 
 ### Get file information
-JS
 ``` javascript
 // Get file name
 file.getName()

@@ -5,7 +5,7 @@ Simple javascript class to perform client-side restrictions on the files.
 HTML
 ``` html
 <!-- import the library -->
-<script src="js-file-inspector.js"></script>
+<script src="js-file-restrict.js"></script>
 ```
 Js
 ``` javascript

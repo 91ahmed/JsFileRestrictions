@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Js File Inspector</title>
+	</head>
+	<body>
+		<ul id="error"></ul>
+
+		<form action="" method="POST" enctype="multipart/form-data">
+			<input type="file" name="myfile[]" multiple>
+			<button type="submit">Upload</button>
+		</form>
+
+		<script src="js-file-inspector.js"></script>
+		<script>
+			document.getElementsByTagName('form')[0].addEventListener('submit', (e) => 
+			{
+				e.preventDefault()
+
+				const file = new fileInspect('myfile[]')
+				file.required()
+				file.size_max(1293321)
+				file.size_min(123324)
+				file.extension(['png', 'jpg'])
+
+				document.getElementById('error').innerHTML = ''
+
+				for (let err in file.errors()) 
+				{
+					document.getElementById('error').innerHTML += `<li>${file.errors()[err]}</li>`
+				}
+				
+				if (file.success()) {
+					document.getElementById('error').innerHTML += `<li>Success</li>`
+				}
+				
+				return false
+			})		
+		</script>
+	</body>
+</html>
